@@ -21,3 +21,4 @@ db/
 *.db
 images/
 audio/
+env_variables.json
