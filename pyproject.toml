@@ -1,0 +1,27 @@
+[project]
+name = "zeos-sarcastic-cat-uv"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "discord>=2.3.2",
+    "duckduckgo-search>=8.0.2",
+    "elevenlabs>=2.3.0",
+    "google-genai>=1.19.0",
+    "google-generativeai>=0.8.5",
+    "ipykernel>=6.29.5",
+    "langchain>=0.3.25",
+    "langchain-community>=0.3.24",
+    "langchain-google-genai>=2.0.10",
+    "langchain-groq>=0.3.2",
+    "langchain-openai>=0.3.18",
+    "langgraph>=0.4.7",
+    "pillow>=11.2.1",
+    "pip>=25.1.1",
+    "python-dotenv>=1.1.0",
+    "rich>=14.0.0",
+    "textual>=3.3.0",
+    "wikipedia>=1.4.0",
+]
