@@ -36,7 +36,7 @@ COPY . /app
 CMD ["uv", "run", "main.py"]
 
 # To build the Docker image
-# docker build -t your-image . (zeos_cat_ubuntu)
+# docker build -t your-image . (zeos-cat-ubuntu-02) (dont forget the dot)
 
 # To run the Docker container with environment variables from a file
 # docker run --env-file .env your-image
