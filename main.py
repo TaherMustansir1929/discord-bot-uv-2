@@ -28,6 +28,7 @@ from handlers.user_roaster import user_roaster_handler
 from handlers.word_counter import word_counter_handler
 from handlers.zeo import zeo_handler
 from handlers.image_gen import image_handler
+from handlers.waifu import anime_handler
 
 # Dictionary to store chat history for each user
 chat_histories_poetry = {}
@@ -287,6 +288,14 @@ async def spam_msg(ctx, *, msg: str):
         await ctx.send(f"[{i+1}] {msg_arr[0]}")
         await asyncio.sleep(0.25)  # Use asyncio.sleep in async function
 
+@spam_msg.error
+async def spam_msg_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.send(
+            f"Please wait {error.retry_after:.2f} seconds before using this command again."
+        )
+    await ctx.reply(f"Sorry an error occured -> {error}")
+
 
 # -----------URDU POETRY COMMAND(SPECIAL)------------------------------
 @bot.command(
@@ -305,6 +314,26 @@ async def poetry_error(ctx: Context, error: Exception):
             f"Please wait {error.retry_after:.2f} seconds before using this command again."
         )
     await ctx.reply(f"Sorry an error occured -> {error}")
+    
+
+# -----------ANIME COMMAND------------------------------
+@bot.command(
+    brief="Generate a random anime gif/image",
+    help="Use this command to generate a random anime gif/image",
+)
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def anime(ctx: Context, category: Optional[str] = None, fw: Optional[str] = None):
+    
+    await anime_handler(bot=bot, ctx=ctx, fw=fw, category=category)
+
+
+@anime.error
+async def anime_error(ctx: Context, error: Exception):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.send(
+            f"Please wait {error.retry_after:.2f} seconds before using this command again."
+        )
+    await ctx.reply(f"Sorry an error occurred -> {error}")
 
 
 bot.run(token=token, log_handler=handler, log_level=logging.ERROR)

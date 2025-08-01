@@ -17,7 +17,7 @@ if not os.path.exists(DB_DIR):
     os.makedirs(DB_DIR)
 
 # Define target phrases globally or load from config
-TARGET_PHRASES = ["low taper fade", "nigga", "nigger", "massive", "job", "job application", "employment", "unemployment", "unemployed", "empolyed", "sigma", "ohio", "grimace shake", "fanum tax", "skibidi toilet"]
+TARGET_PHRASES = ["low taper fade", "nigga", "nigger", "massive", "job application", "employment", "unemployment", "unemployed", "empolyed", "sigma", "ohio", "grimace shake", "fanum tax", "skibidi toilet"]
 
 def _sanitize_phrase_for_table_name(phrase):
     """Sanitizes a phrase to be used as a valid SQLite table name."""
