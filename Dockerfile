@@ -1,42 +1,87 @@
-# Use an official Ubuntu base image
-FROM ubuntu:latest
+# Use Python 3.12 slim base image
+FROM python:3.12-slim
 
-# Set the working directory in the container
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    UV_CACHE_DIR=/tmp/uv-cache \
+    UV_SYSTEM_PYTHON=1
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create user first
+RUN useradd --create-home --shell /bin/bash app
+
+# Install uv package manager globally so it's accessible to all users
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    cp /root/.local/bin/uv /usr/local/bin/uv && \
+    cp /root/.local/bin/uvx /usr/local/bin/uvx && \
+    chmod +x /usr/local/bin/uv /usr/local/bin/uvx
+
+# Verify uv installation
+RUN uv --version
+
+# Set working directory
 WORKDIR /app
 
-# Install necessary packages
-RUN apt-get update && \
-    apt-get install -y software-properties-common curl && \
-    add-apt-repository ppa:deadsnakes/ppa -y && \
-    apt-get update && \
-    apt-get install -y python3.12 python3-pip python3.12-venv && \
-    apt-get clean
+# Copy entrypoint script
+COPY <<EOF /app/entrypoint.sh
+#!/bin/bash
+set -e
 
-# Install uv package manager using the official installer
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+echo "Pulling code from GitHub repository..."
 
-# Verify installation and check where uv is installed
-RUN find /root -name "uv" -type f 2>/dev/null || echo "uv not found in /root"
-RUN ls -la /root/.local/bin/ 2>/dev/null || echo "/root/.local/bin/ not found"
-RUN ls -la /root/.cargo/bin/ 2>/dev/null || echo "/root/.cargo/bin/ not found"
+# Validate that GITHUB_REPO is set
+if [ -z "\$GITHUB_REPO" ]; then
+    echo "Error: GITHUB_REPO environment variable is required"
+    echo "Example: GITHUB_REPO=https://github.com/username/discord-bot-repo.git"
+    exit 1
+fi
 
-# Add possible uv locations to PATH
-ENV PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+# Clone or pull the repository
+if [ -d "/app/bot-code/.git" ]; then
+    echo "Updating existing repository..."
+    cd /app/bot-code
+    git fetch origin
+    git reset --hard origin/\${GITHUB_BRANCH}
+else
+    echo "Cloning repository..."
+    git clone https://github.com/TaherMustansir1929/discord-bot-uv-2.git /app/bot-code
+fi
 
-# Copy dependency files first for better caching
-COPY pyproject.toml uv.lock ./
+cd /app/bot-code
 
-# Install dependencies using uv with explicit path search
-RUN which uv && uv --version && uv sync
+# Check if pyproject.toml exists (for uv)
+if [ -f "pyproject.toml" ]; then
+    echo "Installing dependencies with uv using pyproject.toml..."
+    uv sync
+    echo "Starting Discord bot with uv..."
+    uv run main.py
+elif [ -f "requirements.txt" ]; then
+    echo "Installing dependencies with uv using requirements.txt..."
+    uv pip install -r requirements.txt
+    echo "Starting Discord bot..."
+    python main.py
+else
+    echo "No pyproject.toml or requirements.txt found. Attempting to run main.py directly..."
+    python main.py
+fi
+EOF
 
-# Copy the current directory contents into the container
-COPY . /app
+# Make entrypoint script executable and fix ownership
+RUN chmod +x /app/entrypoint.sh && \
+    chown -R app:app /app
 
-# Run the command to start your bot
-CMD ["uv", "run", "main.py"]
+# Set up environment variables for the GitHub repository
+ENV GITHUB_REPO="https://github.com/TaherMustansir1929/discord-bot-uv-2.git"
+ENV GITHUB_BRANCH="main"
 
-# To build the Docker image
-# docker build -t your-image . (zeos-cat-ubuntu-03) (dont forget the dot)
+# Switch to non-root user
+USER app
 
-# To run the Docker container with environment variables from a file
-# docker run --env-file .env your-image
+# Set the entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]

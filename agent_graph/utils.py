@@ -41,14 +41,15 @@ def get_llm_model(handler: str) -> tuple[str, BaseChatModel]:
     else:
         a4f_base_url = "https://api.a4f.co/v1"
         a4f_models_list = [
-            "provider-1/mistral-large", # yes
+            "provider-2/gpt-5-nano",
+            "provider-6/gpt-4o",
             "provider-6/gpt-4.1", # yes
-            "provider-5/gpt-4.1-mini", # yes
-            "provider-6/o3-pro",
-            "provider-6/o4-mini-high",
-            "provider-3/deepseek-v3", # yes
-            "provider-6/gemini-2.5-flash-thinking", # yes
-            "provider-3/grok-4-0709", # yes
+            "provider-6/gpt-oss-120b", # yes
+            "provider-2/kimi-k2", # yes
+            "provider-2/glm-4.5-air",
+            "provider-1/mistral-large",
+            "provider-6/deepseek-v3-0324-turbo",
+            "provider-6/gemini-2.5-flash-thinking",
         ]
 
         random_idx = random.randint(0, len(a4f_models_list)-1)

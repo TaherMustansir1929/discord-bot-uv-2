@@ -336,4 +336,14 @@ async def anime_error(ctx: Context, error: Exception):
     await ctx.reply(f"Sorry an error occurred -> {error}")
 
 
+# ---------- Test Command --------------------
+@bot.command(
+    brief="Testing command.",
+    help="This command is used for deployment testing purposes.",
+)
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def test(ctx: Context):
+    await ctx.reply("Github Container Deployment Successful.")
+    
+
 bot.run(token=token, log_handler=handler, log_level=logging.ERROR)
