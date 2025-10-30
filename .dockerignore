@@ -1,0 +1,38 @@
+# 🧠 Virtual environments
+.venv/
+env/
+venv/
+
+# 💻 IDE and editor settings
+.idea/
+.vscode/
+*.swp
+
+# 🐍 Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# 🗃️ Version control
+.git/
+.gitignore
+.gitattributes
+
+# 🧾 Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.DS_Store
+
+# 📦 Dependency caches
+pip-wheel-metadata/
+__pypackages__/
+
+# 🧰 Docker-specific
+Dockerfile*
+docker-compose*.yml
