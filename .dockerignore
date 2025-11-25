@@ -36,3 +36,34 @@ __pypackages__/
 # 🧰 Docker-specific
 Dockerfile*
 docker-compose*.yml
+
+# 📚 Documentation
+*.md
+LOGGING.md
+README.md
+
+# 🧪 Testing
+testing.ipynb
+*.ipynb
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 🔐 Environment files (pass at runtime)
+.env
+.env.*
+
+# 🖼️ Generated content (mount as volumes if needed)
+images/generated_images/*
+audio/*
+db/*
+
+# 📄 Deployment configs
+vercel.json
+
+# 💾 OS files
+Thumbs.db
+
+# 📝 Backup files
+*_(backup)
+*_(revert)

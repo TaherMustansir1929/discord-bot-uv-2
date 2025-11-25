@@ -10,21 +10,27 @@ services:
       - .env
     restart: unless-stopped
     volumes:
-      # Cache UV dependencies to speed up rebuilds
-      - uv-cache:/tmp/uv-cache
+      # Persist data directories
+      - ./db:/app/db
+      - ./images/generated_images:/app/images/generated_images
+      - ./audio:/app/audio
       # Optional: Mount logs directory
-      # - ./logs:/app/logs
+      - ./logs:/app/logs
     
-    # Optional: Resource limits
-    # deploy:
-    #   resources:
-    #     limits:
-    #       memory: 512M
-    #       cpus: '0.5'
-    #     reservations:
-    #       memory: 256M
-    #       cpus: '0.25'
-
-volumes:
-  uv-cache:
-    driver: local
+    # Optional: Resource limits (recommended for production)
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s

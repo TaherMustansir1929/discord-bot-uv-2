@@ -1,42 +1,65 @@
-# Use an official Ubuntu base image
-FROM ubuntu:latest
+# Multi-stage build for optimized Discord bot image
+# Stage 1: Builder stage
+FROM python:3.12-slim AS builder
 
-# Set the working directory in the container
+# Set working directory
 WORKDIR /app
 
-# Install necessary packages
-RUN apt-get update && \
-    apt-get install -y software-properties-common curl && \
-    add-apt-repository ppa:deadsnakes/ppa -y && \
-    apt-get update && \
-    apt-get install -y python3.12 python3-pip python3.12-venv && \
-    apt-get clean
+# Install system dependencies needed for building Python packages
+# Keep minimal - only what's needed for compilation
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  gcc \
+  g++ \
+  && rm -rf /var/lib/apt/lists/*
 
-# Install uv package manager using the official installer
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+# Copy uv binary from official image (faster than pip install)
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
 
-# Verify installation and check where uv is installed
-RUN find /root -name "uv" -type f 2>/dev/null || echo "uv not found in /root"
-RUN ls -la /root/.local/bin/ 2>/dev/null || echo "/root/.local/bin/ not found"
-RUN ls -la /root/.cargo/bin/ 2>/dev/null || echo "/root/.cargo/bin/ not found"
+# Copy dependency files
+COPY pyproject.toml ./
 
-# Add possible uv locations to PATH
-ENV PATH="/root/.local/bin:/root/.cargo/bin:$PATH"
+# Install dependencies using uv (much faster than pip)
+# --no-cache prevents caching, reducing image size
+RUN uv pip install --system --no-cache -r pyproject.toml
 
-# Copy dependency files first for better caching
-COPY pyproject.toml uv.lock ./
+# Stage 2: Runtime stage
+FROM python:3.12-slim
 
-# Install dependencies using uv with explicit path search
-RUN which uv && uv --version && uv sync
+# Set working directory
+WORKDIR /app
 
-# Copy the current directory contents into the container
-COPY . /app
+# Install only runtime dependencies:
+# - ffmpeg for audio/voice support (Discord music bot)
+# - ca-certificates for HTTPS requests
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  ffmpeg \
+  ca-certificates \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
 
-# Run the command to start your bot
-CMD ["uv", "run", "main.py"]
+# Copy Python packages from builder stage
+COPY --from=builder /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 
-# To build the Docker image
-# docker build -t your-image . (zeos-cat-ubuntu-03) (dont forget the dot)
+# Copy application code
+COPY . .
 
-# To run the Docker container with environment variables from a file
-# docker run --env-file .env your-image
+# Create necessary directories
+RUN mkdir -p audio db images/anime images/generated_images
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+  PYTHONDONTWRITEBYTECODE=1 \
+  PATH="/usr/local/bin:$PATH"
+
+# Run as non-root user for security
+RUN useradd -m -u 1000 botuser && \
+  chown -R botuser:botuser /app
+USER botuser
+
+# Health check (optional - adjust endpoint/command as needed)
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD python -c "import sys; sys.exit(0)"
+
+# Default command - runs main.py
+CMD ["python", "main.py"]

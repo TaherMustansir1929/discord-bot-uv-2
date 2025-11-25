@@ -4701,7 +4701,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "chat_histories_poetry = {}\n# Set up logging with rich\nsetup_logging()\nload_dotenv()\ntoken = os.getenv(\"DISCORD_TOKEN\")\nif not token:\n    log_error(\"DISCORD_TOKEN not found in environment variables\")\n    sys.exit(1)\nhandler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')\nintents = discord.Intents.default()",
+        "peekOfCode": "chat_histories_poetry = {}\n# Set up logging with rich\nsetup_logging()\nload_dotenv()\ntoken = os.getenv(\"DISCORD_TOKEN\")\nif not token:\n    log_error(\"DISCORD_TOKEN not found in environment variables\")\n    sys.exit(1)\nhandler = logging.FileHandler(filename=\"discord.log\", encoding=\"utf-8\", mode=\"w\")\nintents = discord.Intents.default()",
         "detail": "main",
         "documentation": {}
     },
@@ -4710,7 +4710,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "token = os.getenv(\"DISCORD_TOKEN\")\nif not token:\n    log_error(\"DISCORD_TOKEN not found in environment variables\")\n    sys.exit(1)\nhandler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event",
+        "peekOfCode": "token = os.getenv(\"DISCORD_TOKEN\")\nif not token:\n    log_error(\"DISCORD_TOKEN not found in environment variables\")\n    sys.exit(1)\nhandler = logging.FileHandler(filename=\"discord.log\", encoding=\"utf-8\", mode=\"w\")\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event",
         "detail": "main",
         "documentation": {}
     },
@@ -4719,7 +4719,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")",
+        "peekOfCode": "handler = logging.FileHandler(filename=\"discord.log\", encoding=\"utf-8\", mode=\"w\")\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")",
         "detail": "main",
         "documentation": {}
     },
