@@ -165,6 +165,22 @@
         "documentation": {}
     },
     {
+        "label": "app_commands",
+        "importPath": "discord",
+        "description": "discord",
+        "isExtraImport": true,
+        "detail": "discord",
+        "documentation": {}
+    },
+    {
+        "label": "commands",
+        "importPath": "discord.ext",
+        "description": "discord.ext",
+        "isExtraImport": true,
+        "detail": "discord.ext",
+        "documentation": {}
+    },
+    {
         "label": "commands",
         "importPath": "discord.ext",
         "description": "discord.ext",
@@ -686,6 +702,70 @@
         "documentation": {}
     },
     {
+        "label": "TypedDict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Annotated",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "cast",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Literal",
         "importPath": "typing",
         "description": "typing",
@@ -791,6 +871,46 @@
         "documentation": {}
     },
     {
+        "label": "BaseMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "AIMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "ToolMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
         "label": "RunnableConfig",
         "importPath": "langchain_core.runnables.config",
         "description": "langchain_core.runnables.config",
@@ -816,6 +936,22 @@
     },
     {
         "label": "add_messages",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "StateGraph",
+        "importPath": "langgraph.graph",
+        "description": "langgraph.graph",
+        "isExtraImport": true,
+        "detail": "langgraph.graph",
+        "documentation": {}
+    },
+    {
+        "label": "END",
         "importPath": "langgraph.graph",
         "description": "langgraph.graph",
         "isExtraImport": true,
@@ -2167,6 +2303,30 @@
         "documentation": {}
     },
     {
+        "label": "log_info",
+        "importPath": "agent_graph.logger",
+        "description": "agent_graph.logger",
+        "isExtraImport": true,
+        "detail": "agent_graph.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log_error",
+        "importPath": "agent_graph.logger",
+        "description": "agent_graph.logger",
+        "isExtraImport": true,
+        "detail": "agent_graph.logger",
+        "documentation": {}
+    },
+    {
+        "label": "log_info",
+        "importPath": "agent_graph.logger",
+        "description": "agent_graph.logger",
+        "isExtraImport": true,
+        "detail": "agent_graph.logger",
+        "documentation": {}
+    },
+    {
         "label": "log_warning",
         "importPath": "agent_graph.logger",
         "description": "agent_graph.logger",
@@ -2416,6 +2576,14 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "tool",
         "importPath": "langchain.tools",
         "description": "langchain.tools",
@@ -2438,6 +2606,14 @@
         "importPath": "wikipedia",
         "description": "wikipedia",
         "detail": "wikipedia",
+        "documentation": {}
+    },
+    {
+        "label": "TavilySearchResults",
+        "importPath": "langchain_community.tools.tavily_search",
+        "description": "langchain_community.tools.tavily_search",
+        "isExtraImport": true,
+        "detail": "langchain_community.tools.tavily_search",
         "documentation": {}
     },
     {
@@ -2545,6 +2721,14 @@
         "documentation": {}
     },
     {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
         "label": "ToolNode",
         "importPath": "langgraph.prebuilt",
         "description": "langgraph.prebuilt",
@@ -2583,6 +2767,14 @@
         "importPath": "random",
         "description": "random",
         "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "ChatGoogleGenerativeAI",
+        "importPath": "langchain_google_genai",
+        "description": "langchain_google_genai",
+        "isExtraImport": true,
+        "detail": "langchain_google_genai",
         "documentation": {}
     },
     {
@@ -3227,6 +3419,95 @@
         "documentation": {}
     },
     {
+        "label": "operator",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "operator",
+        "description": "operator",
+        "detail": "operator",
+        "documentation": {}
+    },
+    {
+        "label": "SecretStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "create_research_tools",
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "isExtraImport": true,
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "get_tool_display_name",
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "isExtraImport": true,
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "RESEARCH_AGENT_SYSTEM_PROMPT",
+        "importPath": "research_agent.prompts",
+        "description": "research_agent.prompts",
+        "isExtraImport": true,
+        "detail": "research_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ResearchAgent",
+        "importPath": "research_agent.agent",
+        "description": "research_agent.agent",
+        "isExtraImport": true,
+        "detail": "research_agent.agent",
+        "documentation": {}
+    },
+    {
+        "label": "WikipediaQueryRun",
+        "importPath": "langchain_community.tools.wikipedia.tool",
+        "description": "langchain_community.tools.wikipedia.tool",
+        "isExtraImport": true,
+        "detail": "langchain_community.tools.wikipedia.tool",
+        "documentation": {}
+    },
+    {
+        "label": "WikipediaAPIWrapper",
+        "importPath": "langchain_community.utilities.wikipedia",
+        "description": "langchain_community.utilities.wikipedia",
+        "isExtraImport": true,
+        "detail": "langchain_community.utilities.wikipedia",
+        "documentation": {}
+    },
+    {
+        "label": "DuckDuckGoSearchRun",
+        "importPath": "langchain_community.tools.ddg_search",
+        "description": "langchain_community.tools.ddg_search",
+        "isExtraImport": true,
+        "detail": "langchain_community.tools.ddg_search",
+        "documentation": {}
+    },
+    {
+        "label": "Tool",
+        "importPath": "langchain_core.tools",
+        "description": "langchain_core.tools",
+        "isExtraImport": true,
+        "detail": "langchain_core.tools",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
         "label": "ai_handler",
         "importPath": "handlers.assistant",
         "description": "handlers.assistant",
@@ -3408,6 +3689,14 @@
         "description": "handlers.waifu",
         "isExtraImport": true,
         "detail": "handlers.waifu",
+        "documentation": {}
+    },
+    {
+        "label": "setup_research_bot",
+        "importPath": "research_agent.handler",
+        "description": "research_agent.handler",
+        "isExtraImport": true,
+        "detail": "research_agent.handler",
         "documentation": {}
     },
     {
@@ -4634,6 +4923,123 @@
         "documentation": {}
     },
     {
+        "label": "AgentState",
+        "kind": 6,
+        "importPath": "research_agent.agent",
+        "description": "research_agent.agent",
+        "peekOfCode": "class AgentState(TypedDict):\n    \"\"\"State of the research agent\"\"\"\n    messages: Annotated[Sequence[BaseMessage], operator.add]\n    query: str\n    research_steps: int\n    max_iterations: int\n    tool_call_count: int  # Track total tool calls made\n    min_tool_calls: int  # Minimum required tool calls\nclass ResearchAgent:\n    \"\"\"",
+        "detail": "research_agent.agent",
+        "documentation": {}
+    },
+    {
+        "label": "ResearchAgent",
+        "kind": 6,
+        "importPath": "research_agent.agent",
+        "description": "research_agent.agent",
+        "peekOfCode": "class ResearchAgent:\n    \"\"\"\n    Research agent using LangGraph with ReACT architecture\n    \"\"\"\n    def __init__(\n        self,\n        llm_provider: str = \"google\",\n        model_name: str = \"gemini-2.5-flash\",\n        api_key: Optional[str] = None,\n        tavily_api_key: Optional[str] = None,",
+        "detail": "research_agent.agent",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "research_agent.agent",
+        "description": "research_agent.agent",
+        "peekOfCode": "logger = logging.getLogger(__name__)\n# Graph State Definition\nclass AgentState(TypedDict):\n    \"\"\"State of the research agent\"\"\"\n    messages: Annotated[Sequence[BaseMessage], operator.add]\n    query: str\n    research_steps: int\n    max_iterations: int\n    tool_call_count: int  # Track total tool calls made\n    min_tool_calls: int  # Minimum required tool calls",
+        "detail": "research_agent.agent",
+        "documentation": {}
+    },
+    {
+        "label": "ResearchCog",
+        "kind": 6,
+        "importPath": "research_agent.handler",
+        "description": "research_agent.handler",
+        "peekOfCode": "class ResearchCog(commands.Cog):\n    \"\"\"Discord Cog for research commands\"\"\"\n    def __init__(self, bot: commands.Bot):\n        self.bot = bot\n        self.active_researches = {}  # Track active research sessions\n        # Initialize research agent\n        # You can configure these via environment variables\n        self.agent = ResearchAgent(\n            llm_provider=os.getenv(\"LLM_PROVIDER\", \"google\"),\n            model_name=os.getenv(\"LLM_MODEL\", \"gemini-2.5-flash\"),",
+        "detail": "research_agent.handler",
+        "documentation": {}
+    },
+    {
+        "label": "RESEARCH_AGENT_SYSTEM_PROMPT",
+        "kind": 5,
+        "importPath": "research_agent.prompts",
+        "description": "research_agent.prompts",
+        "peekOfCode": "RESEARCH_AGENT_SYSTEM_PROMPT = \"\"\"You are an advanced research AI agent designed to conduct deep, comprehensive research on any topic.\nYour primary objective is to gather accurate, detailed, and well-sourced information before providing a final answer.\n## Research Methodology:\n1. **Initial Analysis**: Break down the research query into key components and subtopics\n2. **Multi-Source Research**: Use multiple search tools and sources to gather diverse perspectives\n3. **Depth Over Speed**: Prioritize thoroughness - use 5-10+ tool calls for complex topics\n4. **Source Verification**: Cross-reference information across multiple sources\n5. **Structured Synthesis**: Organize findings logically before presenting\n## ReACT Framework:\nYou MUST follow the Reasoning-Action-Observation loop:",
+        "detail": "research_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "RESEARCH_PLANNING_PROMPT",
+        "kind": 5,
+        "importPath": "research_agent.prompts",
+        "description": "research_agent.prompts",
+        "peekOfCode": "RESEARCH_PLANNING_PROMPT = \"\"\"Given the user's research query, create a research plan.\nQuery: {query}\nBreak this down into:\n1. Key topics/subtopics to research (3-5 areas)\n2. Recommended search strategies for each area\n3. Order of investigation (which to research first)\nBe specific and actionable. This plan will guide your research process.\"\"\"\nSYNTHESIS_PROMPT = \"\"\"You have completed your research on: {query}\nBased on all the information gathered from your tool calls, synthesize a comprehensive response.\nYour response should:",
+        "detail": "research_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "SYNTHESIS_PROMPT",
+        "kind": 5,
+        "importPath": "research_agent.prompts",
+        "description": "research_agent.prompts",
+        "peekOfCode": "SYNTHESIS_PROMPT = \"\"\"You have completed your research on: {query}\nBased on all the information gathered from your tool calls, synthesize a comprehensive response.\nYour response should:\n- Be well-structured and easy to read\n- Cover all major aspects of the topic\n- Include specific facts and details from your research\n- Acknowledge different perspectives where relevant\n- Note any limitations or uncertainties\n- Be thorough yet concise\nProvide a response that demonstrates the depth of your research.\"\"\"",
+        "detail": "research_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "RESEARCH_EXAMPLES",
+        "kind": 5,
+        "importPath": "research_agent.prompts",
+        "description": "research_agent.prompts",
+        "peekOfCode": "RESEARCH_EXAMPLES = \"\"\"\n## Example 1: Good Research Pattern\nQuery: \"What are the latest developments in quantum computing?\"\nThought: I need to research quantum computing developments. I'll start with a broad search for recent news, then look into specific companies and breakthroughs.\nAction: tavily_search_results_json\nAction Input: \"latest quantum computing developments 2024 2025\"\n[observes results]\nThought: I found information about recent announcements. Let me search for more specific breakthroughs from major companies.\nAction: duckduckgo_results_json\nAction Input: \"IBM Google quantum computing breakthrough 2024\"",
+        "detail": "research_agent.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "WebScraperTool",
+        "kind": 6,
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "peekOfCode": "class WebScraperTool:\n    \"\"\"Custom web scraping tool using BeautifulSoup\"\"\"\n    name = \"web_scraper\"\n    description = \"\"\"Scrapes content from a specific URL. \n    Input should be a valid URL string.\n    Returns the main text content from the webpage.\"\"\"\n    async def _arun(self, url: str) -> str:\n        \"\"\"Async implementation for web scraping\"\"\"\n        try:\n            async with aiohttp.ClientSession() as session:",
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "create_research_tools",
+        "kind": 2,
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "peekOfCode": "def create_research_tools(tavily_api_key: Optional[str] = None) -> list:\n    \"\"\"\n    Creates and returns all research tools for the agent\n    Args:\n        tavily_api_key: Optional API key for Tavily search\n    Returns:\n        List of tools for the agent\n    \"\"\"\n    tools = []\n    # Tavily Search (if API key provided)",
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "get_tool_display_name",
+        "kind": 2,
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "peekOfCode": "def get_tool_display_name(tool_name: str) -> str:\n    \"\"\"Get a user-friendly display name for a tool\"\"\"\n    return TOOL_DISPLAY_NAMES.get(tool_name, f\"🔧 {tool_name}\")",
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass WebScraperTool:\n    \"\"\"Custom web scraping tool using BeautifulSoup\"\"\"\n    name = \"web_scraper\"\n    description = \"\"\"Scrapes content from a specific URL. \n    Input should be a valid URL string.\n    Returns the main text content from the webpage.\"\"\"\n    async def _arun(self, url: str) -> str:\n        \"\"\"Async implementation for web scraping\"\"\"\n        try:",
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
+        "label": "TOOL_DISPLAY_NAMES",
+        "kind": 5,
+        "importPath": "research_agent.tools",
+        "description": "research_agent.tools",
+        "peekOfCode": "TOOL_DISPLAY_NAMES = {\n    \"tavily_search_results_json\": \"🔍 Tavily Search\",\n    \"duckduckgo_results_json\": \"🦆 DuckDuckGo Search\",\n    \"wikipedia\": \"📚 Wikipedia\",\n    \"web_scraper\": \"🌐 Web Scraper\",\n}\ndef get_tool_display_name(tool_name: str) -> str:\n    \"\"\"Get a user-friendly display name for a tool\"\"\"\n    return TOOL_DISPLAY_NAMES.get(tool_name, f\"🔧 {tool_name}\")",
+        "detail": "research_agent.tools",
+        "documentation": {}
+    },
+    {
         "label": "chat_histories_poetry",
         "kind": 5,
         "importPath": "ahd_bot",
@@ -4719,7 +5125,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "handler = logging.FileHandler(filename=\"discord.log\", encoding=\"utf-8\", mode=\"w\")\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")",
+        "peekOfCode": "handler = logging.FileHandler(filename=\"discord.log\", encoding=\"utf-8\", mode=\"w\")\nintents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await setup_research_bot(bot)\n    # Sync commands\n    try:",
         "detail": "main",
         "documentation": {}
     },
@@ -4728,7 +5134,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "intents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")\n        log_info(f\"Connected to {len(bot.guilds)} guilds\")",
+        "peekOfCode": "intents = discord.Intents.default()\nintents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await setup_research_bot(bot)\n    # Sync commands\n    try:\n        synced = await bot.tree.sync()",
         "detail": "main",
         "documentation": {}
     },
@@ -4737,7 +5143,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "intents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")\n        log_info(f\"Connected to {len(bot.guilds)} guilds\")\n        log_info(f\"Connected to the following guilds:\")",
+        "peekOfCode": "intents.message_content = True\nintents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await setup_research_bot(bot)\n    # Sync commands\n    try:\n        synced = await bot.tree.sync()\n        log_info(f\"Synced {len(synced)} command(s)\")",
         "detail": "main",
         "documentation": {}
     },
@@ -4746,7 +5152,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "intents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")\n        log_info(f\"Connected to {len(bot.guilds)} guilds\")\n        log_info(f\"Connected to the following guilds:\")\n        for guild in bot.guilds:",
+        "peekOfCode": "intents.members = True\nbot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await setup_research_bot(bot)\n    # Sync commands\n    try:\n        synced = await bot.tree.sync()\n        log_info(f\"Synced {len(synced)} command(s)\")\n    except Exception as e:",
         "detail": "main",
         "documentation": {}
     },
@@ -4755,7 +5161,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "bot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await bot.tree.sync()\n    if bot.user is not None:\n        log_success(f\"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})\")\n        log_info(f\"Connected to {len(bot.guilds)} guilds\")\n        log_info(f\"Connected to the following guilds:\")\n        for guild in bot.guilds:\n            log_info(f\"- {guild.name} (ID: {guild.id})\")",
+        "peekOfCode": "bot = commands.Bot(command_prefix=\"!\", intents=intents)\n@bot.event\nasync def on_ready():\n    await setup_research_bot(bot)\n    # Sync commands\n    try:\n        synced = await bot.tree.sync()\n        log_info(f\"Synced {len(synced)} command(s)\")\n    except Exception as e:\n        log_error(f\"Failed to sync commands: {e}\")",
         "detail": "main",
         "documentation": {}
     },

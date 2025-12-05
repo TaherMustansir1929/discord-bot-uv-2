@@ -35,6 +35,7 @@ from handlers.word_counter import word_counter_handler
 from handlers.zeo import zeo_handler
 from handlers.image_gen import image_handler
 from handlers.waifu import anime_handler
+from research_agent.handler import setup_research_bot
 
 # Dictionary to store chat history for each user
 chat_histories_poetry = {}
@@ -59,7 +60,14 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    await bot.tree.sync()
+    await setup_research_bot(bot)
+    # Sync commands
+    try:
+        synced = await bot.tree.sync()
+        log_info(f"Synced {len(synced)} command(s)")
+    except Exception as e:
+        log_error(f"Failed to sync commands: {e}")
+
     if bot.user is not None:
         log_success(f"Bot is ready! Logged in as {bot.user.name} (ID: {bot.user.id})")
         log_info(f"Connected to {len(bot.guilds)} guilds")
@@ -353,6 +361,26 @@ async def anime_error(ctx: Context, error: Exception):
     await ctx.reply(f"Sorry an error occurred -> {error}")
 
 
+# ------------Research Command -------------------------
+@bot.command(
+    brief="Research command.",
+    help="This command is used to research a given topic.",
+)
+@commands.cooldown(1, 10, commands.BucketType.user)
+async def research(ctx: Context, *, topic: str):
+    # await research_handler(bot=bot, ctx=ctx, topic=topic)
+    pass
+
+
+@research.error
+async def research_error(ctx: Context, error: Exception):
+    if isinstance(error, commands.CommandOnCooldown):
+        await ctx.send(
+            f"Please wait {error.retry_after:.2f} seconds before using this command again."
+        )
+    await ctx.reply(f"Sorry an error occurred -> {error}")
+
+
 # ---------- Test Command --------------------
 @bot.command(
     brief="Testing command.",
@@ -360,7 +388,7 @@ async def anime_error(ctx: Context, error: Exception):
 )
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def test(ctx: Context):
-    await ctx.reply("Dokploy - Container Deployment Successful.")
+    await ctx.reply("Added Research Agent")
 
 
 bot.run(token=token, log_handler=handler, log_level=logging.ERROR)
