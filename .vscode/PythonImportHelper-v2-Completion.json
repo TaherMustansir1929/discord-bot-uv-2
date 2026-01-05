@@ -4378,7 +4378,7 @@
         "kind": 2,
         "importPath": "agent_graph.utils",
         "description": "agent_graph.utils",
-        "peekOfCode": "def get_llm_model(handler: str) -> tuple[str, BaseChatModel]:\n    # 50/50 chance of Gemini and Groq and OpenAI\n    gamble = random.randint(0, 1)\n    if gamble == 0:\n        gemini_models_list = [\"gemini-2.5-flash-preview-05-20\", \"gemini-2.0-flash\"]\n        random_idx = random.randint(0, len(gemini_models_list) - 1)\n        model_name = gemini_models_list[random_idx]\n        return model_name, ChatGoogleGenerativeAI(model=model_name)\n    elif gamble == 1:\n        groq_models_list = [",
+        "peekOfCode": "def get_llm_model(handler: str) -> tuple[str, BaseChatModel]:\n    # 50/50 chance of Gemini and Groq and OpenAI\n    gamble = random.randint(0, 1)\n    if gamble == 0:\n        gemini_models_list = [\n            \"gemini-2.5-flash\",\n            \"gemini-3-flash-preview\",\n        ]\n        random_idx = random.randint(0, len(gemini_models_list) - 1)\n        model_name = gemini_models_list[random_idx]",
         "detail": "agent_graph.utils",
         "documentation": {}
     },

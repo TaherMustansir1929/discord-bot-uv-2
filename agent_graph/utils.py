@@ -11,7 +11,10 @@ def get_llm_model(handler: str) -> tuple[str, BaseChatModel]:
     gamble = random.randint(0, 1)
 
     if gamble == 0:
-        gemini_models_list = ["gemini-2.5-flash-preview-05-20", "gemini-2.0-flash"]
+        gemini_models_list = [
+            "gemini-2.5-flash",
+            "gemini-3-flash-preview",
+        ]
 
         random_idx = random.randint(0, len(gemini_models_list) - 1)
         model_name = gemini_models_list[random_idx]
